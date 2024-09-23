@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plost
-import uvicorn
-from fastapi import FastAPI
 import pandas as pd
 import joblib
 from pydantic import BaseModel
@@ -11,7 +9,6 @@ import plotly.graph_objects as go
 import streamviz
 from PIL import Image
 import shap
-import xgboost
 import requests
 import json
 import matplotlib.pyplot as plt
@@ -27,12 +24,13 @@ col1, col2, col3 = st.columns([1,1,1])
 with col1:
     st.sidebar.write("")
 with col2:
-    st.sidebar.header('Dashboard `Crédit`')
     # Pousser une image dans le serveur pour la mettre
-    # image = Image.open('logo projet fintech.png')
-    # st.sidebar.image(image, use_column_width="always")
+    image = Image.open('Logo.png')
+    st.sidebar.image(image, use_column_width="always")
 with col3:
     st.sidebar.write("")
+st.sidebar.header('Dashboard `Crédit`')
+
 
 # SELECTION DU CLIENT
 st.sidebar.subheader('CLIENT')
